@@ -1,0 +1,27 @@
+- hosts: localhost
+  become: true
+  # pre_tasks: ...
+  # vars: ...
+  tasks:
+  - name: Install zsh
+    apt:
+      name: zsh
+    tags:
+      - zsh
+  - name: set zsh
+    shell: chsh -s $(which zsh)
+    tags:
+      - zsh
+  - name: Install oh my zsh
+    shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    tags:
+      - zsh
+  - name: Install autosuggestions plugin
+    git:
+      repo: https://github.com/zsh-users/zsh-autosuggestions
+      dest: ~/.oh-my-zsh/plugins/zsh-autosuggestions
+        # REPLACE THE BELLOW WITH DOTFILE
+  - name: Set the plugin on zshrc
+    shell: sed -i 's/(git/(git zsh-autosuggestions/' ~/.zshrc
+    tags:
+      - zsh
