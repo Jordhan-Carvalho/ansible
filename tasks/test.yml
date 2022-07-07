@@ -1,0 +1,21 @@
+- name: make sure function is in bashrc
+  blockinfile:
+    dest: ~/.bashrc
+    block: |-
+      my_test_func() {
+        echo hello test func
+      }
+
+
+- name: remove the .bashrc check for interactive shell 
+  shell: sed -i 's/\[ -z "$PS1" \] && return/# removed interactive check/' ~/.bashrc
+
+- name: run the function from shell after sourcing .bashrc
+  shell: source ~/.bashrc && my_test_func
+  register: func_result
+  args: 
+    executable: /bin/bash # Run in the Bash shell
+
+- name: check result
+  debug:
+    var: func_result.stdout

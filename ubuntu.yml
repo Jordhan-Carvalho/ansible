@@ -13,6 +13,8 @@
       - install
       - core
   tasks:
+  # - include: tasks/test.yml
   - include: tasks/ssh.yml
   - include: tasks/zsh.yml
+  - include: tasks/dotfiles.yml
   - include: tasks/asdf.yml

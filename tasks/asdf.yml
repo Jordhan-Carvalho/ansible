@@ -5,3 +5,46 @@
     version: v0.10.0
   tags:
     - asdf
+    - install
+- name: Set asdf and source .bashrc
+  shell: cd $HOME && echo '. $HOME/.asdf/asdf.sh' >> .bashrc
+  tags:
+    - asdf
+    - install
+- name: Install asdf NodeJs plugin dependencies
+  apt:
+    name: ["dirmngr", "gpg", "curl", "gawk"]
+  tags:
+    - asdf
+    - node
+    - install
+- name: Remove the .bashrc check for interactive shell 
+  shell: sed -i 's/\[ -z "$PS1" \] && return/# removed interactive check/' ~/.bashrc
+  tags:
+    - asdf
+    - install
+    - bash
+- name: Install asdf NodeJs Plugin
+  shell: source ~/.bashrc && asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  args:
+    executable: /bin/bash # Run in the Bash shell
+  tags:
+    - install
+    - asdf
+    - node
+- name: Install nodejs 16.15.1LTS
+  shell: source ~/.bashrc && asdf install nodejs 16.15.1
+  args:
+    executable: /bin/bash
+  tags:
+    - install
+    - asdf
+    - node
+- name: Set Node 16 as global
+  shell: source ~/.bashrc && asdf global nodejs 16.15.1
+  args:
+    executable: /bin/bash
+  tags:
+    - install
+    - asdf
+    - node

@@ -4,3 +4,21 @@
   tags:
     - stow
     - dotfiles
+- name: Cloning .dotfiles
+  become: true
+  git:
+    repo: 'git@github.com:Jordhan-Carvalho/.dotfiles.git'
+    dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    key_file: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    version: 'ubuntu-install'
+  tags:
+    - dotfiles
+- name: Stow dotfiles
+  shell: cd $HOME/.dotfiles && ./stow.sh
+  tags:
+    - install
+    - dotfiles
+    - stow
