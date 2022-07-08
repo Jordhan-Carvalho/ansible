@@ -20,3 +20,6 @@
   - include: tasks/core-setup.yml
   - include: tasks/asdf.yml
   - include: tasks/npm-packages.yml
+  - include: tasks/neovim.yml
+    # general tools (slack, notion-enhanced, chrome, gnome-tweaks, nerd-fonts(meso))
+    # dev tools (insomnia, dbeaver, tmux, lazygit, i3wm)
