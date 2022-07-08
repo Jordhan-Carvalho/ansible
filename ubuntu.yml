@@ -17,4 +17,6 @@
   - include: tasks/ssh.yml
   - include: tasks/zsh.yml
   - include: tasks/dotfiles.yml
+  - include: tasks/core-setup.yml
   - include: tasks/asdf.yml
+  - include: tasks/npm-packages.yml

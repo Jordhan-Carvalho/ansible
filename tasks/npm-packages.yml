@@ -1,0 +1,32 @@
+- name: Install Yarn 
+  shell: source ~/.zshrc && npm install --global yarn 
+  args:
+    executable: /usr/bin/zsh # Run in the zsh
+  tags:
+    - npm
+    - install
+    - node
+- name: Install eslint 
+  shell: source ~/.zshrc && npm install --global eslint 
+  args:
+    executable: /usr/bin/zsh 
+  tags:
+    - npm
+    - install
+    - node
+- name: Install typescript 
+  shell: source ~/.zshrc && npm install --global typescript 
+  args:
+    executable: /usr/bin/zsh 
+  tags:
+    - npm
+    - install
+    - node
+- name: Install TS-Node 
+  shell: source ~/.zshrc && npm install --global ts-node 
+  args:
+    executable: /usr/bin/zsh 
+  tags:
+    - npm
+    - install
+    - node

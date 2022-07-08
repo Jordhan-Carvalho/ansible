@@ -19,3 +19,11 @@
 - name: check result
   debug:
     var: func_result.stdout
+
+
+# - name: Remove the .bashrc check for interactive shell 
+#   shell: sed -i 's/\[ -z "$PS1" \] && return/# removed interactive check/' ~/.bashrc
+#   tags:
+#     - asdf
+#     - install
+#     - bash
