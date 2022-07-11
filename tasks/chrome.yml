@@ -1,0 +1,32 @@
+- name: Download chrome
+  get_url:
+    url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    dest: /tmp/chrome.deb
+  tags:
+    - install
+    - chrome
+
+- name: Remove Any previous chrome
+  become: true
+  apt:
+    name: google-chrome-stable
+    state: absent
+  tags:
+    - install
+    - chrome
+
+- name: Install Chrome .deb package
+  become: true
+  apt:
+    deb: /tmp/chrome.deb
+  tags:
+    - install
+    - chrome
+
+- name: Check repo 
+  become: true
+  apt:
+    name: google-chrome-stable
+  tags:
+    - install
+    - chrome

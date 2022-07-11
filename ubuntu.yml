@@ -21,5 +21,9 @@
   - include: tasks/asdf.yml
   - include: tasks/npm-packages.yml
   - include: tasks/neovim.yml
-    # general tools (slack, notion-enhanced, chrome, gnome-tweaks, nerd-fonts(meso))
-    # dev tools (insomnia, dbeaver, tmux, lazygit, i3wm)
+  - include: tasks/slack.yml
+  - include: tasks/chrome.yml
+  - include: tasks/notion.yml
+  - include: tasks/dev-tools.yml
+    # general tools (slack, notion-enhanced, chrome, nerd-fonts(meso))
+    # dev tools (insomnia, dbeaver, tmux, lazygit, i3wm, gnome-tweaks)

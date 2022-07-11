@@ -1,0 +1,7 @@
+- name: Install dev packages (tmux, gnome-tweaks)
+  become: true
+  apt:
+    name: [ "tmux", "gnome-tweaks"]
+  tags:
+    - install
+    - dev
