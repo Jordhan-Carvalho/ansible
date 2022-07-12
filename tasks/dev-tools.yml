@@ -5,3 +5,54 @@
   tags:
     - install
     - dev
+
+- name: Install i3wm
+  become: true
+  apt:
+    name: i3
+    state: present
+  tags:
+    - dev
+    - install
+    - i3
+- name: Install i3blocks
+  become: true
+  apt:
+    name: i3blocks
+    state: present
+  tags:
+    - dev
+    - install
+    - i3
+# - name: Install LazyGit 
+#   shell: source ~/.zshrc && go install github.com/jesseduffield/lazygit@latest
+#   args:
+#     executable: /usr/bin/zsh
+#   tags:
+#     - install
+#     - dev
+#     - lazygit
+
+- name: Add insomnia repository 
+  become: true
+  shell: echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+  tags:
+    - dev
+    - install
+    - insomnia
+- name: Apt update 
+  become: true
+  apt:
+    update_cache: yes
+  tags:
+    - insomnia
+    - dev
+    - install
+- name: Install insomnia
+  become: true
+  apt:
+    name: insomnia 
+  tags:
+    - insomnia
+    - install
+    - dev

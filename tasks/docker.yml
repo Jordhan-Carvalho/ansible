@@ -1,0 +1,45 @@
+- name: Install docker dependencies
+  become: true
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - ca-certificates
+    - curl
+    - gnupg
+    - lsb-release
+  tags:
+    - install
+    - docker
+- name: Add Docker’s official GPG key
+  become: true
+  shell: sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  tags:
+    - install
+    - docker
+- name: Setup the docker repository
+  become: true
+  shell: echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  tags:
+    - docker
+    - install
+- name: Apt update 
+  become: true
+  apt:
+    update_cache: yes
+  tags:
+    - docker
+    - install
+- name: Install docker engine
+  become: true
+  apt:
+    name: [ "docker-ce", "docker-ce-cli", "containerd.io", "docker-compose-plugin"]
+  tags:
+    - install
+    - docker
+- name: PostInstall Add user to Docker group 
+  become: true
+  shell: usermod -aG docker "{{ansible_user_id}}"
+  tags:
+    - install
+    - docker

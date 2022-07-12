@@ -1,7 +1,7 @@
 - name: Install System Packages 1 (build-essential, cmake, pkgconfig, pthread, xclip)
   become: true
   apt:
-    name: ["build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev", "xclip"]
+    name: ["build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev", "xclip", "wget"]
   tags:
     - install
     - neovim

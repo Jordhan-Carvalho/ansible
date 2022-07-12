@@ -14,7 +14,6 @@
     update: yes
     accept_hostkey: yes
     key_file: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
-    version: 'ubuntu-install'
   tags:
     - dotfiles
 - name: Stow dotfiles

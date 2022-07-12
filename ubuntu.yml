@@ -18,12 +18,14 @@
   - include: tasks/zsh.yml
   - include: tasks/dotfiles.yml
   - include: tasks/core-setup.yml
+  - include: tasks/neovim.yml
   - include: tasks/asdf.yml
   - include: tasks/npm-packages.yml
-  - include: tasks/neovim.yml
   - include: tasks/slack.yml
   - include: tasks/chrome.yml
   - include: tasks/notion.yml
+  # - include: tasks/font.yml
+  - include: tasks/dbeaver.yml
+  - include: tasks/docker.yml
   - include: tasks/dev-tools.yml
-    # general tools (slack, notion-enhanced, chrome, nerd-fonts(meso))
-    # dev tools (insomnia, dbeaver, tmux, lazygit, i3wm, gnome-tweaks)
+  # dev tools (insomnia, tmux, lazygit, i3wm, gnome-tweaks )

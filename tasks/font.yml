@@ -1,0 +1,6 @@
+- name: Installing custom fonts
+  become: true
+  shell: ./fontInstall.sh
+  tags:
+    - install
+    - fonts
