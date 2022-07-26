@@ -29,4 +29,13 @@
   tags:
     - npm
     - install
-    - node
+    - ts-node
+- name: Install TLDR
+  shell: source ~/.zshrc && npm install --global tldr
+  args:
+    executable: /usr/bin/zsh 
+  tags:
+    - npm
+    - install
+    - tldr 
+

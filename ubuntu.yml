@@ -24,8 +24,10 @@
   - include: tasks/slack.yml
   - include: tasks/chrome.yml
   - include: tasks/notion.yml
-  # - include: tasks/font.yml
+  - include: tasks/font.yml
   - include: tasks/dbeaver.yml
   - include: tasks/docker.yml
+  - include: tasks/zoom.yml
+  - include: tasks/obs.yml
   - include: tasks/dev-tools.yml
-  # dev tools (insomnia, tmux, lazygit, i3wm, gnome-tweaks )
+  # dev tools (insomnia, tmux, lazygit, i3wm, gnome-tweaks ) - FALTA LAZYGIT

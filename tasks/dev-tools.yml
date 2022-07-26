@@ -24,7 +24,17 @@
     - dev
     - install
     - i3
-# - name: Install LazyGit 
+
+- name: Install fzf
+  become: true
+  apt:
+    name: fzf 
+  tags:
+    - fzf
+    - install
+    - dev
+
+# - name: Install LazyGit
 #   shell: source ~/.zshrc && go install github.com/jesseduffield/lazygit@latest
 #   args:
 #     executable: /usr/bin/zsh

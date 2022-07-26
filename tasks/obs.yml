@@ -1,0 +1,22 @@
+- name: Install ffmpeg(req for OBS)
+  become: true
+  apt:
+    name: ffmpeg
+  tags:
+    - install
+    - obs
+- name: Add PPA repository for OBS 
+  become: true
+  apt_repository:
+    repo: ppa:obsproject/obs-studio
+    update_cache: yes
+  tags:
+    - install
+    - obs
+- name: Install OBS
+  become: true
+  apt:
+    name: obs-studio
+  tags:
+    - install
+    - obs
