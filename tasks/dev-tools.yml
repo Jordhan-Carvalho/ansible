@@ -5,6 +5,16 @@
   tags:
     - install
     - dev
+    - tmux
+- name: Download tmux tpm plugin manager
+  become: true
+  git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: "{{ lookup('env', 'HOME') }}/.tmux/plugins/tpm"
+  tags:
+    - install
+    - tmux
+    - dev
 
 - name: Install i3wm
   become: true
