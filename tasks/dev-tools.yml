@@ -34,6 +34,14 @@
     - dev
     - install
     - i3
+- name: Install imagemagick and scrot (i3lock script dep)
+  become: true
+  apt:
+    name: ["imagemagick", "scrot", "xautolock"]
+  tags:
+    - dev
+    - install
+    - i3
 
 - name: Install fzf
   become: true

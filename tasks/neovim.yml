@@ -3,6 +3,7 @@
   tags:
     - install
     - neovim
+    - neovimreinstall
 - name: Get Packer
   become: true
   git:
@@ -14,18 +15,22 @@
 - name: Clone Neovim
   git:
     repo: 'https://github.com/neovim/neovim.git'
+    version: 'stable'
     dest: "{{ lookup('env', 'HOME') }}/neovim"
   tags:
     - install
     - neovim
+    - neovimreinstall
 - name: Build neovim
   shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
   tags:
     - install
     - neovim
+    - neovimreinstall
 - name: Install neovim
   become: true
   shell: "cd {{ lookup('env', 'HOME') }}/neovim && make install"
   tags:
     - install
     - neovim
+    - neovimreinstall

@@ -14,3 +14,8 @@ run ansible inside the docker with user
 ```sh
 ansible-playbook ubuntu.yml --ask-vault-pass --ask-become-pass
 ```
+
+with tag
+```sh
+ansible-playbook --tags=neovimreinstall ubuntu.yml --ask-vault-pass --ask-become-pass
+```
