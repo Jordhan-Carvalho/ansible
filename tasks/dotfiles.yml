@@ -16,6 +16,13 @@
     key_file: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
   tags:
     - dotfiles
+
+- name: Permission on dotfiles
+  become: true
+  shell: "chmod -R a+xrw {{ lookup('env', 'HOME') }}/.dotfiles"
+  tags:
+    - dotfiles
+
 - name: Stow dotfiles
   shell: cd $HOME/.dotfiles && ./stow.sh
   tags:

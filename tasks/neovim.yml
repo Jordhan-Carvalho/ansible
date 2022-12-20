@@ -12,6 +12,12 @@
   tags:
     - install
     - neovim
+- name: Permission on the local
+  become: true
+  shell: "chmod -R a+xrw {{ lookup('env', 'HOME') }}/.local/share/nvim"
+  tags:
+    - install
+    - neovim
 - name: Clone Neovim
   git:
     repo: 'https://github.com/neovim/neovim.git'
