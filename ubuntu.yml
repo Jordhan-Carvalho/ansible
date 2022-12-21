@@ -3,6 +3,7 @@
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     the_user: "{{ ansible_user_id }}"
+    terminal_theme: "Dark Pastel"
   pre_tasks:
   - name: Update Apt
     become: true
@@ -33,4 +34,5 @@
   - include: tasks/zoom.yml
   - include: tasks/obs.yml
   - include: tasks/dev-tools.yml
+  - include: tasks/themes.yml
   # dev tools (insomnia, tmux, lazygit, i3wm, gnome-tweaks ) - FALTA LAZYGIT

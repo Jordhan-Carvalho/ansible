@@ -1,0 +1,26 @@
+- name: Install dconf if not installed
+  become: true
+  apt:
+    name: ["dconf-cli", "dconf-service", "dconf-gsettings-backend"]
+    state: present
+  tags:
+    - terminal
+    - install
+    - themes
+
+- name: Installing custom themes 
+  become: true
+  shell: ./terminalThemeInstall.sh
+  tags:
+    - install
+    - terminal
+    - themes
+
+- name: Setting the default theme
+  shell: source ~/.zshrc && node ./defaultTheme.js "{{ terminal_theme }}" 
+  args:
+    executable: /usr/bin/zsh 
+  tags:
+    - install
+    - terminal
+    - themes
