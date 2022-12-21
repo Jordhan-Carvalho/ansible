@@ -1,0 +1,31 @@
+- name: Install JDK, requirement for Android studio
+  become: true
+  apt:
+    name: openjdk-11-jdk
+    state: present
+  tags:
+    - install
+    - android-studio
+
+
+- name: Add PPA for Android Studio
+  become: true
+  apt_repository:
+    repo: "ppa:maarten-fonville/android-studio"
+  tags:
+    - install
+    - android-studio
+
+- name: Update apt cache
+  become: true
+  apt: update_cache=yes
+  tags:
+    - install
+    - android-studio
+
+- name: Install Android Studio
+  become: true
+  apt: name=android-studio state=present
+  tags:
+    - install
+    - android-studio

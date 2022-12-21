@@ -1,0 +1,32 @@
+- name: Remove flutter
+  shell: rm -rf ~/neovim
+  tags:
+    - install
+    - flutter
+    - flutterreinstall
+
+- name: clone flutter repository
+  become: true
+  git:
+    repo: https://github.com/flutter/flutter.git
+    dest: "{{ lookup('env', 'HOME') }}/flutter"
+    version: stable
+  tags:
+    - flutter
+    - install
+    - flutterreinstall
+
+- name: Permission on flutter 
+  become: true
+  shell: "chmod -R a+xrw {{ lookup('env', 'HOME') }}/flutter"
+  tags:
+    - install
+    - flutter
+    - flutterreinstall
+
+- name: Add Flutter to PATH
+  lineinfile:
+    path: ~/.bashrc
+    line: 'export PATH="$PATH:$HOME/flutter/bin"'
+    state: present
+

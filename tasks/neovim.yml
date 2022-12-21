@@ -40,3 +40,22 @@
     - install
     - neovim
     - neovimreinstall
+
+- name: Install TS LSP
+  shell: source ~/.zshrc && npm install --global typescript-language-server
+  args:
+    executable: /usr/bin/zsh 
+  tags:
+    - npm
+    - install
+    - tsserver 
+
+
+- name: Install Go LSP
+  shell: source ~/.zshrc && go install golang.org/x/tools/gopls@latest 
+  args:
+    executable: /usr/bin/zsh 
+  tags:
+    - npm
+    - install
+    - gopls 

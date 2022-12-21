@@ -9,7 +9,7 @@
 - name: Install System Packages 2 (mostly neovim req)
   become: true
   apt:
-    name: ["ninja-build", "gettext", "libtool", "libtool-bin", "autoconf", "automake", "g++", "pkg-config", "unzip", "doxygen"]
+    name: ["ninja-build", "gettext", "libtool", "libtool-bin", "autoconf", "automake", "g++", "pkg-config", "unzip", "doxygen", "neofetch"]
   tags:
     - install
     - neovim

@@ -19,3 +19,12 @@ with tag
 ```sh
 ansible-playbook --tags=neovimreinstall ubuntu.yml --ask-vault-pass --ask-become-pass
 ```
+
+To encrypt files
+```
+ansible-vault encrypt testfile
+```
+Decrypt
+```
+ansible-vault decrypt testfile
+```

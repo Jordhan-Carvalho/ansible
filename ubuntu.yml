@@ -19,9 +19,11 @@
   - include: tasks/zsh.yml
   - include: tasks/dotfiles.yml
   - include: tasks/core-setup.yml
-  - include: tasks/neovim.yml
   - include: tasks/asdf.yml
   - include: tasks/npm-packages.yml
+  - include: tasks/neovim.yml
+  - include: tasks/flutter.yml
+  - include: tasks/android-studio.yml
   - include: tasks/slack.yml
   - include: tasks/chrome.yml
   - include: tasks/notion.yml
