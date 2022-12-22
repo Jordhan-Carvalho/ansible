@@ -4,6 +4,7 @@
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     the_user: "{{ ansible_user_id }}"
     terminal_theme: "Dark Pastel"
+    ubuntu_theme: "Adwaita-dark"
   pre_tasks:
   - name: Update Apt
     become: true

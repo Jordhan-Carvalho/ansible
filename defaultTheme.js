@@ -23,5 +23,6 @@ for (let index = 0; index < blocks.length; index++) {
 if (themeId) {
     childProcess.execSync(`dconf write /org/gnome/terminal/legacy/profiles:/default "'${themeId}'"`);
 } else {
-  throw new Error("Unable to find theme id for: "+ defaultTheme)
+  console.error("Unable to find the id for: " + defaultTheme)
+  /* throw new Error("Unable to find theme id for: "+ defaultTheme) */
 }

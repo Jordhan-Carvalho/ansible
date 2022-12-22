@@ -24,3 +24,12 @@
     - install
     - terminal
     - themes
+
+- name: Change Ubuntu theme
+  become: true
+  shell: gsettings set org.gnome.desktop.interface gtk-theme {{ ubuntu_theme }}
+  ignore_errors: true
+  tags:
+    - install
+    - themes
+    - ubuntu
