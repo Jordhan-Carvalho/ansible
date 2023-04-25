@@ -38,30 +38,30 @@
     - install
     - asdf
     - node
-- name: Install Go Plugin
-  shell: source ~/.zshrc && asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-  args:
-    executable: /usr/bin/zsh # Run in the zsh
-  tags:
-    - install
-    - asdf
-    - go
-- name: Install goLang 1.18.3
-  shell: source ~/.zshrc && asdf install golang 1.18.3
-  args:
-    executable: /usr/bin/zsh 
-  tags:
-    - install
-    - asdf
-    - go
-- name: Set GoLang 1.18.3 as global
-  shell: source ~/.zshrc && asdf global golang 1.18.3
-  args:
-    executable: /usr/bin/zsh 
-  tags:
-    - install
-    - asdf
-    - go
+# - name: Install Go Plugin
+#   shell: source ~/.zshrc && asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+#   args:
+#     executable: /usr/bin/zsh # Run in the zsh
+#   tags:
+#     - install
+#     - asdf
+#     - go
+# - name: Install goLang 1.18.3
+#   shell: source ~/.zshrc && asdf install golang 1.18.3
+#   args:
+#     executable: /usr/bin/zsh 
+#   tags:
+#     - install
+#     - asdf
+#     - go
+# - name: Set GoLang 1.18.3 as global
+#   shell: source ~/.zshrc && asdf global golang 1.18.3
+#   args:
+#     executable: /usr/bin/zsh 
+#   tags:
+#     - install
+#     - asdf
+#     - go
 # - name: Install default packages from .dotfile (lazygit) 
 #   shell: source ~/.zshrc && go install -u $PACKAGE 
 #   args:
